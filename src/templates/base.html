@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} {% endblock %} - SonusCloud</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <img
+        src="{{ url_for('static', filename='images/logo_big_light.png') }}"
+        alt="SoC"
+        class="logo"
+        onclick="window.location = '/'"
+      />
+      <nav>
+        <a href="/" class="{{ 'selected' if active_page == 'home' else '' }}"
+          >HOME</a
+        ><a
+          href="/artists"
+          class="{{ 'selected' if active_page == 'artists' else '' }}"
+          >ARTISTS</a
+        ><a
+          href="/about"
+          class="{{ 'selected' if active_page == 'about' else '' }}"
+          >ABOUT</a
+        ><a
+          href="/search"
+          class="{{ 'selected' if active_page == 'search' else '' }}"
+          >SEARCH</a
+        ><a
+          href="/spotlight"
+          class="{{ 'selected' if active_page == 'spotlight' else '' }}"
+          >SPOTLIGHT</a
+        ><a
+          href="/playlist"
+          class="{{ 'selected' if active_page == 'playlist' else '' }}"
+          >PLAYLIST</a
+        >
+        <div class="dot"></div>
+      </nav>
+    </div>
+
+    {% block content %} {% endblock %}
+
+    <footer>
+      <a href="/about">ABOUT</a>
+      <div class="text">Made by Praneeth &amp; Faisal</div>
+      <img
+        src="{{ url_for('static', filename='images/logo_small_light.png') }}"
+        alt="logo"
+        onclick="window.location = '/'"
+      />
+    </footer>
+  </body>
+</html>

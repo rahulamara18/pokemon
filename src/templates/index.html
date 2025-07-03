@@ -1,0 +1,125 @@
+{% extends 'base.html' %} {% set active_page = "home" %} {% block title %} Home
+{% endblock %} {% block content %}
+<div class="background">
+  <div class="top_items_page">
+    <div class="header hover_underline">Top Artists</div>
+    <div class="top_item">
+      <div class="profile_circle">
+        <a href="/queen" tabindex="-1">
+          <img
+            src="{{url_for('static', filename='images/queen/queen.jpg')}}"
+            alt=""
+            style="transform: scale(1.3); height: auto; margin-top: 1.6rem"
+          />
+        </a>
+      </div>
+      <div class="item_name">QUEEN</div>
+      <div class="item_info">Classic Rock</div>
+    </div>
+    <div class="top_item">
+      <div class="profile_circle">
+        <a href="/chainsmokers" tabindex="-1">
+          <img
+            src="{{url_for('static', filename='images/chainsmokers/chainsmokers.jpg')}}"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="item_name">The Chainsmokers</div>
+      <div class="item_info">Dance Pop</div>
+    </div>
+    <div class="top_item">
+      <div class="profile_circle">
+        <a href="/radwimps" tabindex="-1">
+          <img
+            src="{{url_for('static', filename='images/radwimps/radwimps.jpg')}}"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="item_name">Radwimps</div>
+      <div class="item_info">J - Pop</div>
+    </div>
+  </div>
+  <div class="top_items_page">
+    <div class="header hover_underline">Top Albums</div>
+    <div class="top_item">
+      <div class="profile_circle">
+        <a href="/queen/0" tabindex="-1">
+          <img
+            src="{{url_for('static', filename='images/queen/a1.jpg')}}"
+            alt=""
+            style="transform: scale(1.1)"
+          />
+        </a>
+      </div>
+      <div class="item_name">The Miracle</div>
+      <div class="item_info">2022</div>
+    </div>
+    <div class="top_item">
+      <div class="profile_circle">
+        <a href="/chainsmokers/4" tabindex="-1">
+          <img
+            src="{{url_for('static', filename='images/chainsmokers/a4.jpg')}}"
+            alt=""
+            style="transform: scale(1.15)"
+          />
+        </a>
+      </div>
+      <div class="item_name">Sick Boy (SE)</div>
+      <div class="item_info">2019</div>
+    </div>
+    <div class="top_item">
+      <div class="profile_circle">
+        <a href="/radwimps/4" tabindex="-1">
+          <img
+            src="{{url_for('static', filename='images/radwimps/a4.jpg')}}"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="item_name">FOREVER DAZE</div>
+      <div class="item_info">2021</div>
+    </div>
+  </div>
+  <div class="top_items_page">
+    <div class="header hover_underline">Top Songs</div>
+    <div class="top_item">
+      <div class="profile_circle">
+        <a href="#" onclick="return false;" tabindex="-1">
+          <img
+            src="{{url_for('static', filename='images/chainsmokers/a1.jpg')}}"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="item_name">Maradona</div>
+      <div class="item_info">2022</div>
+    </div>
+    <div class="top_item">
+      <div class="profile_circle">
+        <a href="#" onclick="return false;" tabindex="-1">
+          <img
+            src="{{url_for('static', filename='images/kitri/a2.jpg')}}"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="item_name">New Me</div>
+      <div class="item_info">2021</div>
+    </div>
+    <div class="top_item">
+      <div class="profile_circle">
+        <a href="#" onclick="return false;" tabindex="-1">
+          <img
+            src="{{url_for('static', filename='images/5sos/a1.jpg')}}"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="item_name">BAD OMENS</div>
+      <div class="item_info">2022</div>
+    </div>
+  </div>
+</div>
+{% endblock %}

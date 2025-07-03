@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% set active_page = "spotlight" %} {% block title %}
+Spotlight {% endblock %} {% block content %}
+
+<div class="artist_container">
+  <div class="hero spotlight_hero">
+    <div
+      class="card spotlight_card"
+      style="background-image: url({{url_for('static', filename='images/chainsmokers/chainsmokers.jpg')}})"
+    ></div>
+    <div class="artist_info">
+      <div class="artist_name">The Chainsmokers</div>
+      <div class="artist_genre">Dance Pop</div>
+      <div class="artist_description">
+        Grammy Award-winning and Billboard Chart topping artist/producer duo,
+        The Chainsmokers, have evolved into a dominating musical force with a
+        diverse repertoire of songs that have led them to become one of music's
+        hottest recording artists. Comprised of Alex Pall and Drew Taggart,
+        their signature sound deftly reaches across indie, progressive and pop
+        realms.
+      </div>
+    </div>
+  </div>
+
+  <div class="transition spotlight_transition">
+    <div class="review_title">Review</div>
+    <div class="countdown"></div>
+  </div>
+</div>
+
+<form class="review_container">
+  <input
+    type="text"
+    class="name_input review_input"
+    name="name"
+    placeholder="Name"
+    required
+  />
+
+  <textarea
+    class="review_area review_input"
+    name="review"
+    placeholder="Review"
+    required
+  ></textarea>
+  <div class="rating_label"></div>
+
+  <div class="rating">
+    <input type="radio" id="star5" name="rate" value="5" />
+    <label for="star5" title="text"></label>
+    <input type="radio" id="star4" name="rate" value="4" />
+    <label for="star4" title="text"></label>
+    <input type="radio" id="star3" name="rate" value="3" />
+    <label for="star3" title="text"></label>
+    <input type="radio" id="star2" name="rate" value="2" />
+    <label for="star2" title="text"></label>
+    <input type="radio" id="star1" name="rate" value="1" />
+    <label for="star1" title="text"></label>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<div class="table_container">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+{% endblock %}

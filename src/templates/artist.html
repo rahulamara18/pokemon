@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% block title %} {{full_name}} {% endblock %} {%
+block content %}
+<div class="artist_container">
+  <div class="hero">
+    <div
+      class="card"
+      style="background-image: url({{'data:image/png;base64,'+image}})"
+    ></div>
+    <div class="artist_info">
+      <div class="artist_name">{{ full_name }}</div>
+      <div class="artist_genre">{{ genre }}</div>
+      <div class="artist_description">{{ description }}</div>
+    </div>
+  </div>
+
+  <div class="transition"></div>
+
+  <div class="albums">
+    <div class="header hover_underline">Albums</div>
+
+    {% for album in albums %}
+    <div class="album">
+      <a href="{{name}}/{{loop.index-1}}">
+        <div class="container">
+          <div class="top">
+            <img
+              src="{{'data:image/png;base64,'+album['image']}}"
+              alt="{{album['name']}}"
+            />
+          </div>
+          <div class="bottom">
+            <div class="details">
+              <h1>{{album['name']}}</h1>
+              <p>{{album['year']}}</p>
+            </div>
+            <div class="album_button">
+              <svg
+                width="24"
+                height="24"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              >
+                <path
+                  d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+      <div class="inside">
+        <div class="contents">
+          <h2>Songs</h2>
+          <ol class="songs_list">
+            {% for track in album['tracks'] %}
+            <li>{{track['name']}}</li>
+            {% endfor %}
+          </ol>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

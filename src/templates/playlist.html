@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% set active_page = "playlist" %} {% block title %}
+Playlist {% endblock %} {% block content %}
+<div class="background">
+  <div class="playlist_page">
+    <div class="playlist_header">
+      <h1>Favourites</h1>
+    </div>
+
+    <div class="playlist_container">
+      <ol class="track_list">
+        {% for track in tracks %}
+        <div
+          class="track"
+          data-id="{{track['artist_id']}} {{track['album_id']}} {{track['song_id']}}"
+        >
+          <div class="playlist_track">
+            <li class="track_number">{{ track['name'] }}</li>
+            <div class="artist_name">{{ track['artist'] }}</div>
+            <div class="right">
+              <div class="minus">-</div>
+              <div class="track_length">{{ track['length'] }}</div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

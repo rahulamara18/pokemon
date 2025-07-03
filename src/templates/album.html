@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block title %} {{ albums[album_index]['name'] }} {%
+endblock %} {% block content %} {% set album = albums[album_index] %}
+
+<div class="album_container">
+  <div class="album_hero">
+    <div class="album_art_border">
+      <div
+        class="album_art"
+        style="background-image: url({{'data:image/png;base64,'+album['image']}})"
+      ></div>
+    </div>
+
+    <div class="album_info">
+      <div class="album_name">{{album['name']}}</div>
+      <div class="album_details">
+        <div class="release_date">{{album['year']}}</div>
+        <div class="song_count">{{album['tracks']|length}} Songs</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="track_container" id="tracks">
+    <div class="song_label">Songs</div>
+    <ol class="track_list">
+      {% for track in album['tracks'] %}
+      <div class="track {{ 'favourite' if loop.index-1 in songIDs else '' }}">
+        <div class="track_info">
+          <li class="track_number">{{track['name']}}</li>
+          <div class="right">
+            <div class="plus">+</div>
+            <div class="track_length">{{track['length']}}</div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </ol>
+  </div>
+</div>
+
+{% endblock %}
